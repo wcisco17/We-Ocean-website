@@ -1,0 +1,53 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": false,
+        "noEmitOnError": true,
+        "target": "esnext",
+        "module": "esnext",
+        "jsx": "preserve",
+        "removeComments": false,
+        "sourceMap": true,
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "inlineSourceMap": false,
+        "inlineSources": false,
+        "experimentalDecorators": true,
+        "noUnusedParameters": true,
+        "noUnusedLocals": true,
+        "allowSyntheticDefaultImports": true,
+        "baseUrl": "./",
+        "lib": [
+            "dom",
+            "es2016"
+        ],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "strict": false,
+        "forceConsistentCasingInFileNames": true,
+        "noEmit": true,
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true
+    },
+    "awesomeTypescriptLoaderOptions": {
+        "useCache": true,
+        "useBabel": true,
+        "reportFiles": [
+            "pages/**/*.{ts,tsx}",
+            "components/**/*.{ts,tsx}"
+        ]
+    },
+    "compileOnSave": true,
+    "exclude": [
+        "node_modules"
+    ],
+    "include": [
+        "next-env.d.ts",
+        "**/*.ts",
+        "**/*.tsx",
+        "assets/**/*.tsx",
+        "assets/**/*.ts",
+        "pages/*.tsx",
+        "store/*.tsx"
+    ]
+}
