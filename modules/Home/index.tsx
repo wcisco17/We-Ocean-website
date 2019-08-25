@@ -4,6 +4,7 @@ import { AWS_S3_BUCKET, BucketImages } from '../../assets/config/index';
 import { theme } from '../../assets/theme/index';
 import Button from '../../components/Button';
 import { Text, Title, Wrapper } from './styles';
+
 if (typeof window === 'undefined') {
     // do nothing
 } else {
@@ -16,11 +17,11 @@ const HomePage: React.FC<IProps> = () => {
     const [result, setResult] = useState('');
 
     const handleScan = data => {
-        console.log('[DATA]: ', data);
-
         if (data) {
+            localStorage.setItem('OTHER', data);
             setResult(data);
         }
+        return result;
     }
 
     const handleError = err => {
@@ -37,14 +38,14 @@ const HomePage: React.FC<IProps> = () => {
                 <QrReader
                     onError={handleError}
                     onScan={handleScan}
-                    style={{ width: '60%', }}
+                    style={{
+                        width: '60%',
+                        display: 'inline-flex',
+                        position: 'relative',
+                        top: '-270px',
+
+                    }}
                 />
-                <p>
-                    Result:
-                    {
-                        result
-                    }
-                </p>
             </div>
         )
     });

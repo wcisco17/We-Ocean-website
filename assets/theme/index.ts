@@ -70,6 +70,11 @@ export const GlobalStyled = createGlobalStyle`
     .swal-overlay {
          background-color: ${theme.colors.primary};
     }
+
+    .swal-content {
+        display: block;
+    }
+
     .log {
             height: 500px;
             width: 1050px;
@@ -77,7 +82,8 @@ export const GlobalStyled = createGlobalStyle`
     }
 
     .swal-modal {
-        width: 600px;
+        width: 630px;
+        height: 690px;
     }
 
     .swal-text {
@@ -91,6 +97,8 @@ export const GlobalStyled = createGlobalStyle`
         font-size: 20px;
         background-color: ${theme.colors.primary};
         color: ${theme.colors.white};
+        position: relative;
+        top: -200px;
     }
 
     .swal-footer {
