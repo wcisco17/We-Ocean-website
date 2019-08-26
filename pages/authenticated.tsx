@@ -1,13 +1,4 @@
 import * as React from 'react';
+import Auth from '../modules/Authenticated/index';
 
-interface IProps { };
-
-const Authenticated: React.FC<IProps> = () => {
-    return (
-        <div className="container">
-            Authenticated
-        </div>
-    );
-}
-
-export default Authenticated;
+export default () => <Auth />;

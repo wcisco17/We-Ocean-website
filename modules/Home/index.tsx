@@ -1,27 +1,27 @@
 import swal from '@sweetalert/with-react';
+import Router from 'next/router';
 import React, { useState } from 'react';
 import { AWS_S3_BUCKET, BucketImages } from '../../assets/config/index';
 import { theme } from '../../assets/theme/index';
 import Button from '../../components/Button';
+import { QrCodeReader } from './QrReader';
 import { Text, Title, Wrapper } from './styles';
-
-if (typeof window === 'undefined') {
-    // do nothing
-} else {
-    var QrReader = require('react-qr-reader');
-}
 
 interface IProps { };
 
 const HomePage: React.FC<IProps> = () => {
-    const [result, setResult] = useState('');
+    const [result] = useState(null);
+    // const nextPage = (link: string) => <Link href={link} />
 
-    const handleScan = data => {
+    const handleScan = (data) => {
         if (data) {
-            localStorage.setItem('OTHER', data);
-            setResult(data);
+            localStorage.setItem('@QR_DATA', data);
+            swal.close();
+            return Router.push({
+                pathname: '/authenticated',
+                query: { qr: JSON.stringify(data).slice(3, 7) }
+            });
         }
-        return result;
     }
 
     const handleError = err => {
@@ -34,22 +34,13 @@ const HomePage: React.FC<IProps> = () => {
             cancel: "Close",
         },
         content: (
-            <div>
-                <QrReader
-                    onError={handleError}
-                    onScan={handleScan}
-                    style={{
-                        width: '60%',
-                        display: 'inline-flex',
-                        position: 'relative',
-                        top: '-270px',
-
-                    }}
-                />
-            </div>
+            <QrCodeReader
+                data={result}
+                handleError={handleError}
+                handleScan={handleScan}
+            />
         )
     });
-
     return (
         <Wrapper>
             <div className="text">
@@ -78,7 +69,7 @@ const HomePage: React.FC<IProps> = () => {
                         backgroundColor={theme.colors.primary}
                         textColor={theme.colors.white}
                         onClick={() => modal()}
-                        text='Log In Now'
+                        text='Read Qr Code'
                     />
                     <div style={{ marginRight: 20 }} />
                     <Button

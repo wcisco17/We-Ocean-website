@@ -12,8 +12,11 @@
         "@zeit/next-css": "^1.0.1",
         "@zeit/next-sass": "^1.0.1",
         "apollo-boost": "^0.4.4",
+        "apollo-cache-inmemory": "^1.6.3",
+        "apollo-link-http": "^1.5.15",
         "bootstrap": "^4.3.1",
         "next": "^9.0.4",
+        "node-fetch": "^2.6.0",
         "node-sass": "^4.12.0",
         "react": "^16.9.0",
         "react-apollo": "^3.0.1",
@@ -27,12 +30,14 @@
         "sweetalert": "^2.1.2"
     },
     "devDependencies": {
+        "@types/graphql": "^14.5.0",
         "@types/next": "^8.0.6",
         "@types/react": "^16.9.2",
         "@types/react-dom": "^16.9.0",
         "@types/react-qr-reader": "^2.1.2",
         "@types/styled-components": "^4.1.18",
         "@zeit/next-typescript": "^1.1.1",
+        "graphql": "^14.5.3",
         "ts-node": "^8.3.0",
         "typescript": "^3.5.3"
     }

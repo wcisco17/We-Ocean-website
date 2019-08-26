@@ -24,6 +24,7 @@ export const theme = {
         shadow: '3px 4px 10px rgba(66, 133, 244, 0.69)',
         dark: '#3a3a3a',
         white: '#FFFFFF',
+        danger: '#bb2124',
         btn: {
             primaryOrange: '#FA735C',
             primaryRed: '#EB12D8',
