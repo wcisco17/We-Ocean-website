@@ -24,6 +24,7 @@ export const theme = {
         shadow: '3px 4px 10px rgba(66, 133, 244, 0.69)',
         dark: '#3a3a3a',
         white: '#FFFFFF',
+        danger: '#bb2124',
         btn: {
             primaryOrange: '#FA735C',
             primaryRed: '#EB12D8',
@@ -70,6 +71,11 @@ export const GlobalStyled = createGlobalStyle`
     .swal-overlay {
          background-color: ${theme.colors.primary};
     }
+
+    .swal-content {
+        display: block;
+    }
+
     .log {
             height: 500px;
             width: 1050px;
@@ -77,7 +83,8 @@ export const GlobalStyled = createGlobalStyle`
     }
 
     .swal-modal {
-        width: 600px;
+        width: 630px;
+        height: 690px;
     }
 
     .swal-text {
@@ -91,6 +98,8 @@ export const GlobalStyled = createGlobalStyle`
         font-size: 20px;
         background-color: ${theme.colors.primary};
         color: ${theme.colors.white};
+        position: relative;
+        top: -200px;
     }
 
     .swal-footer {

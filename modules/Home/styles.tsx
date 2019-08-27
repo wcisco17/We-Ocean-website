@@ -14,6 +14,8 @@ export const Wrapper = styled.section`
     grid-template-rows: 70vh;
     align-items: flex-end;
     justify-content: center;
+    overflow: hidden;
+    height: 100vh;
     .text {
         grid-area: text;
         max-width: 500px;
