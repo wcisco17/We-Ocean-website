@@ -1,5 +1,3 @@
-import { dispatch } from "..";
-
 export type ICounterAction =
     | { type: "increment" }
     | { type: "decrement" };
@@ -21,11 +19,3 @@ export const counterReducer = (
             return state;
     }
 };
-
-export const increment = () => dispatch({
-    type: 'increment'
-});
-
-export const decrement = () => dispatch({
-    type: 'decrement'
-});

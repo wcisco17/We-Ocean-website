@@ -6,7 +6,6 @@ import { ApolloProvider } from 'react-apollo';
 import { ApolloProvider as ApolloHooksProvider } from 'react-apollo-hooks';
 import { theme, ThemeProvider } from '../assets/theme';
 import { GlobalStyled } from '../assets/theme/index';
-import { GlobalStateProvider } from '../store';
 
 const client = new ApolloClient({
     uri: 'http://localhost:5555',
@@ -36,10 +35,8 @@ export default class RootApp extends App<any> {
                 <ThemeProvider theme={theme}>
                     <ApolloProvider client={client}>
                         <ApolloHooksProvider client={client} >
-                            <GlobalStateProvider>
                                 <GlobalStyled />
                                 <Component {...pageProps} />
-                            </GlobalStateProvider>
                         </ApolloHooksProvider>
                     </ApolloProvider>
                 </ThemeProvider>
