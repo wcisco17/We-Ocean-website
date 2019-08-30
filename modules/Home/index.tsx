@@ -6,13 +6,10 @@ import { theme } from '../../assets/theme/index';
 import Button from '../../components/Button';
 import { QrCodeReader } from './QrReader';
 import { Text, Title, Wrapper } from './styles';
-
 interface IProps { };
 
 const HomePage: React.FC<IProps> = () => {
     const [result] = useState(null);
-    // const nextPage = (link: string) => <Link href={link} />
-
     const handleScan = (data) => {
         if (data) {
             localStorage.setItem('@QR_DATA', data);
@@ -41,6 +38,7 @@ const HomePage: React.FC<IProps> = () => {
             />
         )
     });
+
     return (
         <Wrapper>
             <div className="text">

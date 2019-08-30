@@ -17,6 +17,7 @@ export const QrCodeReader: React.FC<IProps> = ({ handleError, handleScan, data }
             <QrReader
                 onError={handleError}
                 onScan={handleScan}
+                
                 style={{
                     width: '60%',
                     display: 'inline-flex',
